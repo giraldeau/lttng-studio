@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2013-09-04T16:02:34
+# Project created by QtCreator 2013-09-10T14:14:32
 #
 #-------------------------------------------------
 
@@ -8,8 +8,7 @@ include(../common.pri)
 
 QT       -= gui
 
-TARGET = tst_basic
+TARGET = tst_babeltracetest
 
-SOURCES += \
-    tst_basic.cpp \
+SOURCES += tst_babeltracetest.cpp
 
