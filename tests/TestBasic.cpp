@@ -1,30 +1,31 @@
 #include <QString>
 #include <QtTest>
+#include <AutoTest.h>
 
-#include "core.h"
+#include <core.h>
 
-class TestsTest : public QObject
+class TestBasic : public QObject
 {
     Q_OBJECT
     
 public:
-    TestsTest();
+    TestBasic();
     
 private Q_SLOTS:
     void testImportCore();
 };
 
-TestsTest::TestsTest()
+TestBasic::TestBasic()
 {
 }
 
-void TestsTest::testImportCore()
+void TestBasic::testImportCore()
 {
     Core *core = new Core();
     QVERIFY2(core, "Failure");
     delete core;
 }
 
-QTEST_APPLESS_MAIN(TestsTest)
+DECLARE_TEST(TestBasic)
 
-#include "tst_testsbasic.moc"
+#include "TestBasic.moc"
