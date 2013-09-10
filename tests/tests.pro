@@ -9,11 +9,10 @@ QT       += testlib
 QT       -= gui
 
 TARGET = tst_teststest
-CONFIG   += console
-CONFIG   -= app_bundle
+CONFIG += testcase
+CONFIG -= app_bundle
 
 TEMPLATE = app
-
 
 SOURCES += \
     tst_testsbasic.cpp
@@ -25,3 +24,7 @@ else:unix: LIBS += -L$$OUT_PWD/../core/ -llttngstudiocore
 
 INCLUDEPATH += $$PWD/../core
 DEPENDPATH += $$PWD/../core
+
+# This works on Unix to load local shared library
+# at runtime without setting LD_LIBRARY_PATH
+QMAKE_RPATHDIR += $$OUT_PWD/../core
