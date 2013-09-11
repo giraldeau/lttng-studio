@@ -32,11 +32,7 @@ BabeltraceTest::BabeltraceTest()
 
 void BabeltraceTest::initTestCase()
 {
-    /*
-    char *dir = getenv("top_srcdir");
-    qDebug() << QDir::currentPath() << endl;
-    cout << "dir " << dir << endl;
-    */
+    qDebug() << QProcessEnvironment::systemEnvironment().value("abs_src_dir", NULL) << endl;
 }
 
 void BabeltraceTest::cleanupTestCase()
