@@ -32,7 +32,6 @@ BabeltraceTest::BabeltraceTest()
 
 void BabeltraceTest::initTestCase()
 {
-    qDebug() << QProcessEnvironment::systemEnvironment().value("abs_src_dir", NULL) << endl;
 }
 
 void BabeltraceTest::cleanupTestCase()
@@ -46,7 +45,7 @@ void BabeltraceTest::testCase1()
     struct bt_ctf_event *ctf_event;
     int count = 0;
 
-    QString path = "ctf-traces/succeed/wk-heartbeat-u/";
+    QString path = SRCDIR "/ctf-traces/succeed/wk-heartbeat-u/";
     // open a trace
     struct bt_context *ctx = bt_context_create();
     int trace_id = bt_context_add_trace(ctx, path.toStdString().c_str(), "ctf", NULL, NULL, NULL);
