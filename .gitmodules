@@ -1,3 +1,3 @@
 [submodule "3rdparty/QMakeTestRunner"]
 	path = 3rdparty/QMakeTestRunner
-	url = git://github.com/AgileWorkersSoftware/QMakeTestRunner.git
+	url = git://github.com/giraldeau/QMakeTestRunner.git
