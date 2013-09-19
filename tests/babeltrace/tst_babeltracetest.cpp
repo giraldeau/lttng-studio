@@ -1,5 +1,6 @@
 #include <QString>
 #include <QtTest>
+#include <QDir>
 #include <QProcessEnvironment>
 
 #include <iostream>
@@ -23,7 +24,9 @@ public:
 private Q_SLOTS:
     void initTestCase();
     void cleanupTestCase();
-    void testCase1();
+    void testEventCount();
+private:
+    QDir traceDir;
 };
 
 BabeltraceTest::BabeltraceTest()
@@ -32,20 +35,26 @@ BabeltraceTest::BabeltraceTest()
 
 void BabeltraceTest::initTestCase()
 {
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    QStringList path = QStringList() << env.value("top_srcdir") << "3rdparty"
+                                     << "babeltrace" << "tests" << "ctf-traces";
+    traceDir.setPath(path.join(QDir::separator()));
 }
 
 void BabeltraceTest::cleanupTestCase()
 {
 }
 
-void BabeltraceTest::testCase1()
+void BabeltraceTest::testEventCount()
 {
     struct bt_ctf_iter *iter;
     struct bt_iter_pos begin_pos;
     struct bt_ctf_event *ctf_event;
     int count = 0;
 
-    QString path = SRCDIR "/ctf-traces/succeed/wk-heartbeat-u/";
+    QString path = traceDir.absolutePath() + QDir::separator() + "succeed" +
+            QDir::separator() + "wk-heartbeat-u";
+
     // open a trace
     struct bt_context *ctx = bt_context_create();
     int trace_id = bt_context_add_trace(ctx, path.toStdString().c_str(), "ctf", NULL, NULL, NULL);
@@ -58,6 +67,7 @@ void BabeltraceTest::testCase1()
         count++;
         bt_iter_next(bt_ctf_get_iter(iter));
     }
+    bt_context_put(ctx);
     QVERIFY2(count == 20, "Wrong event count");
 }
 
