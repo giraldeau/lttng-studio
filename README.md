@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/giraldeau/lttng-studio.png)](https://travis-ci.org/giraldeau/lttng-studio)
+
 # lttng-studio
 
 lttng-studio is a trace viewer and analyzer for software developers and system administrators, based on the Linux Tracing Toolkit infrastructure.
