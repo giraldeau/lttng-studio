@@ -18,3 +18,8 @@ moc_*.cpp
 qrc_*.cpp
 Makefile
 *-build-*
+
+# private config
+git-user-alias
+git-user-field
+
