@@ -7,6 +7,7 @@ before_install:
     - sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev libbabeltrace-ctf-dev libbabeltrace-dev
 script:
     - qmake -qt=qt5 -r -v
+    - qmake -qt=qt5 -r
     - make
 branches:
     only:
