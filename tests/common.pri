@@ -13,8 +13,10 @@ win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../core/release/ -l
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../core/debug/ -llttngstudiocore
 else:unix: LIBS += -L$${top_builddir}/core/ -llttngstudiocore
 
-unix: CONFIG += link_pkgconfig
-unix: PKGCONFIG += babeltrace
+#unix: CONFIG += link_pkgconfig
+#unix: PKGCONFIG += babeltrace
+
+LIBS += -lbabeltrace -lbabeltrace-ctf
 
 INCLUDEPATH += $$PWD/../core
 DEPENDPATH += $$PWD/../core
