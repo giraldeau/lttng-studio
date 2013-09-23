@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 SUBDIRS = \
 basic \
-    babeltrace
+    babeltrace \
+    unwind
