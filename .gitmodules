@@ -1,6 +1,6 @@
 [submodule "3rdparty/QMakeTestRunner"]
 	path = 3rdparty/QMakeTestRunner
-	url = git://github.com/giraldeau/QMakeTestRunner.git
+	url = git://github.com/mirkoboehm/QMakeTestRunner.git
 [submodule "3rdparty/babeltrace"]
 	path = 3rdparty/babeltrace
 	url = git://github.com/giraldeau/babeltrace.git
