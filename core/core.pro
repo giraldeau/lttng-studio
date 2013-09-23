@@ -11,10 +11,12 @@ TEMPLATE = lib
 
 DEFINES += LTTNG_STUDIO_CORE_LIBRARY
 
-SOURCES += core.cpp
+SOURCES += core.cpp \
+    unwind.cpp
 
 HEADERS += core.h\
-        core_global.h
+        core_global.h \
+    unwind.h
 
 unix:!symbian {
     maemo5 {
@@ -24,3 +26,6 @@ unix:!symbian {
     }
     INSTALLS += target
 }
+
+LIBS += -L/usr/lib/x86_64-linux-gnu -lunwind -lunwind-x86_64 \
+    -lbabeltrace -lbabeltrace-ctf
