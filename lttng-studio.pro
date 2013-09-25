@@ -2,7 +2,9 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     core \
-    tests
+    tests \
+    dummy \
+    bidon
 
 TEST_LIB_PATHS += $$OUT_PWD/core
 TEST_CUSTOM_ENV += \\\"top_srcdir="$$top_srcdir"\\\"
