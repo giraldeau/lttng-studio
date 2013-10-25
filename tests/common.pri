@@ -20,3 +20,4 @@ LIBS += -L/usr/lib/x86_64-linux-gnu -lunwind -lunwind-x86_64 -lbabeltrace -lbabe
 
 INCLUDEPATH += $$PWD/../lib/lttngstudio
 DEPENDPATH += $$PWD/../lib/lttngstudio
+

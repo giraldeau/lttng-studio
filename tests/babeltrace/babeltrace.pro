@@ -12,3 +12,4 @@ TARGET = tst_babeltracetest
 
 SOURCES += tst_babeltracetest.cpp
 
+include(../post.pri)

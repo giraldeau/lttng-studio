@@ -2,8 +2,6 @@
 #include <QtTest>
 #include <QProcessEnvironment>
 
-#include <lttngstudio.h>
-
 class tst_Basic : public QObject
 {
     Q_OBJECT
@@ -12,20 +10,12 @@ public:
     tst_Basic();
 
 private Q_SLOTS:
-    void testImportCore();
     void testEnvironment_data();
     void testEnvironment();
 };
 
 tst_Basic::tst_Basic()
 {
-}
-
-void tst_Basic::testImportCore()
-{
-    Core *core = new Core();
-    QVERIFY2(core, "Failure");
-    delete core;
 }
 
 void tst_Basic::testEnvironment_data()

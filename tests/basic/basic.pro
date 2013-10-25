@@ -13,3 +13,4 @@ TARGET = tst_basic
 SOURCES += \
     tst_basic.cpp \
 
+include(../post.pri)

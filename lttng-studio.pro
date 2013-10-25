@@ -4,6 +4,7 @@ SUBDIRS += \
     lib \
     tests \
     utils
+CONFIG += ordered
 
 TEST_LIB_PATHS += $$OUT_PWD/lib/lttngstudio
 TEST_CUSTOM_ENV += \\\"top_srcdir="$$top_srcdir"\\\"
