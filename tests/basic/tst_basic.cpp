@@ -2,15 +2,15 @@
 #include <QtTest>
 #include <QProcessEnvironment>
 
-#include <core.h>
+#include <lttngstudio.h>
 
 class tst_Basic : public QObject
 {
     Q_OBJECT
-    
+
 public:
     tst_Basic();
-    
+
 private Q_SLOTS:
     void testImportCore();
     void testEnvironment_data();

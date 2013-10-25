@@ -1,21 +1,18 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2013-09-04T16:00:13
+# Project created by QtCreator 2013-10-25T12:04:13
 #
 #-------------------------------------------------
 
 QT       -= gui
 
-TARGET = lttngstudiocore
+TARGET = unwind
 TEMPLATE = lib
+CONFIG += staticlib
 
-DEFINES += LTTNG_STUDIO_CORE_LIBRARY
+SOURCES += unwind.cpp
 
-SOURCES += core.cpp
-
-HEADERS += core.h\
-        core_global.h
-
+HEADERS += unwind.h
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib

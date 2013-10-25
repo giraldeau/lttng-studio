@@ -9,14 +9,14 @@ TEMPLATE = app
 
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../core/release/ -llttngstudiocore
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../core/debug/ -llttngstudiocore
-else:unix: LIBS += -L$${top_builddir}/core/ -llttngstudiocore
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/lttngstudio/release/ -llttngstudio
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/lttngstudio/debug/ -llttngstudio
+else:unix: LIBS += -L$${top_builddir}/lib/lttngstudio/ -llttngstudio
 
 #unix: CONFIG += link_pkgconfig
 #unix: PKGCONFIG += babeltrace
 
 LIBS += -L/usr/lib/x86_64-linux-gnu -lunwind -lunwind-x86_64 -lbabeltrace -lbabeltrace-ctf
 
-INCLUDEPATH += $$PWD/../core
-DEPENDPATH += $$PWD/../core
+INCLUDEPATH += $$PWD/../lib/lttngstudio
+DEPENDPATH += $$PWD/../lib/lttngstudio
