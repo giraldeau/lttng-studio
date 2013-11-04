@@ -1,6 +1,7 @@
 #include <QString>
 #include <QtTest>
 #include <QProcessEnvironment>
+#include <QOptParser>
 
 class tst_Basic : public QObject
 {
@@ -12,6 +13,7 @@ public:
 private Q_SLOTS:
     void testEnvironment_data();
     void testEnvironment();
+    void testArguments();
 };
 
 tst_Basic::tst_Basic()
@@ -31,6 +33,13 @@ void tst_Basic::testEnvironment()
 
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     QVERIFY2(env.value(var, "").length() > 0, "undefined env var");
+}
+
+void tst_Basic::testArguments()
+{
+    char *argv[] = { "--test", "hello" };
+    QOptParser parser(1, argv);
+    QVERIFY(true);
 }
 
 QTEST_MAIN(tst_Basic)

@@ -1,6 +1,7 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
+    3rdparty/QOptParser/qoptparser \
     lib \
     tests \
     utils

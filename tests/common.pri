@@ -18,6 +18,9 @@ else:unix: LIBS += -L$${top_builddir}/lib/lttngstudio/ -llttngstudio
 
 LIBS += -L/usr/lib/x86_64-linux-gnu -lunwind -lunwind-x86_64 -lbabeltrace -lbabeltrace-ctf
 
+LIBS += $$PWD/../3rdparty/QOptParser/build/libQOptParser.a
+INCLUDEPATH += $$PWD/../3rdparty/QOptParser/src/
+
 INCLUDEPATH += $$PWD/../lib/lttngstudio
 DEPENDPATH += $$PWD/../lib/lttngstudio
 
