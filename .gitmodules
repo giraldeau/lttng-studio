@@ -4,3 +4,6 @@
 [submodule "3rdparty/babeltrace"]
 	path = 3rdparty/babeltrace
 	url = git://github.com/giraldeau/babeltrace.git
+[submodule "3rdparty/QOptParser"]
+	path = 3rdparty/QOptParser
+	url = git@github.com:giraldeau/QOptParser.git
