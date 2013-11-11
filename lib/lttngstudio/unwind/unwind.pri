@@ -7,8 +7,10 @@
 QT       -= gui
 
 SOURCES += \
-    unwind/unwinder.cpp
+    unwind/unwinder.cpp \
+    unwind/unw_wrapper.c
 
 HEADERS += \
-    unwind/unwinder.h
+    unwind/unwinder.h \
+    unwind/unw_wrapper.h
 
