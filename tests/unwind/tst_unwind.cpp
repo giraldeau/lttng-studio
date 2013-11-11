@@ -6,8 +6,7 @@
 
 #include <unwind/unwinder.h>
 
-
-
+extern "C" {
 int _find_proc_info(unw_addr_space_t, unw_word_t, unw_proc_info_t *, int, void *)
 {
     qDebug() << "find_proc_info";
@@ -66,6 +65,7 @@ static unw_accessors_t myacc = {
     .resume = _resume,
     .get_proc_name = _get_proc_name,
 };
+}
 
 class UnwindTest : public QObject
 {
