@@ -56,6 +56,7 @@ int _access_reg(unw_addr_space_t as, unw_regnum_t regnum, unw_word_t *valp,
 
     if (val != NULL) {
         printf("access_reg 0x%lX\n", *val);
+        printf("access_reg %s\n", unw_regname(regnum));
     }
     return 0;
 }
