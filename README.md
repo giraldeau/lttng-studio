@@ -8,19 +8,24 @@ lttng-studio is a trace viewer and analyzer for software developers and system a
 
 The project is using C++, Qt 5 and qmake.
 
+Install dependencies (Ubuntu 14.04):
+<pre><code>
+  apt-get install libunwind8-dev libbabeltrace-dev libbabeltrace-ctf-dev qtbase5-dev
+</code></pre>
+
 First, load 3rd party submodules:
 
 <pre><code>
   git submodule init
   git submodule update
-</pre></code>
+</code></pre>
 
 Then, the usual makefile generation and compilation:
 
 <pre><code>
   qmake -r
   make
-</pre></code>
+</code></pre>
 
 # Running unit tests
 ==========
@@ -29,7 +34,7 @@ Use the target "test" to run unit tests:
 
 <pre><code>
   make test
-</pre></code>
+</code></pre>
 
 QMakeTestRunner adds the target "test" and export LD_LIBRARY_PATH for the local build. To run tests manually, libraries must be available in LD_LIBRARY_PATH or globaly.
 
